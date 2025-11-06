@@ -1,284 +1,271 @@
 # 🎬 CineMetrics: AI-Powered Movie Data Engineering Dashboard
 
 <div align="center">
+  
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)  
+![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B.svg)  
+![License](https://img.shields.io/badge/License-MIT-green.svg)  
+![Status](https://img.shields.io/badge/Status-Active-success.svg)  
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Status](https://img.shields.io/badge/Status-Active-success.svg)
+**An interactive Data Engineering + Analytics dashboard for real-time movie insights**
 
-**An interactive Data Engineering + Analytics Dashboard for real-time movie insights**
-
-[Features](#-features) • [Demo](#-demo) • [Installation](#-installation--setup) • [Usage](#-usage) • [Architecture](#️-architecture)
+[Features](#-features) • [Demo](#demo) • [Installation](#installation--setup) • [Usage](#usage) • [Architecture](#architecture)  
 
 </div>
 
 ---
 
-## 📖 Overview
+## 📖 Overview  
+**CineMetrics** demonstrates a production-style data engineering project: a full ETL (Extract → Transform → Load) workflow built in Python + Streamlit. It sources live movie data via the OMDb API, cleans and transforms it, stores cleaned data into a simulated data lake (CSV), and visualizes metrics such as IMDb ratings and box-office revenue. Optional AI integration with Gemini API adds intelligent movie summaries.
 
-**CineMetrics** is a production-ready **Data Engineering Project** demonstrating a complete **ETL (Extract, Transform, Load)** workflow using real-world movie data.  
-
-Built with **Python** and **Streamlit**, it fetches live data from the **OMDb API**, processes it through a robust data pipeline, stores it in a simulated **Data Lake**, and presents interactive **visual analytics** for insights.  
-
----
-
-### 🎯 Key Highlights
-
-- 🔄 **Real-time ETL Pipeline** – Automated data extraction and transformation  
-- 📊 **Interactive Dashboards** – Stunning analytics powered by Streamlit  
-- 🗄️ **Data Lake Architecture** – Local CSV storage simulation  
-- 🤖 **AI Integration (Optional)** – Gemini AI for intelligent movie summaries  
-- 📈 **Analytics Ready** – IMDb ratings, genre trends, and box office insights  
+### 🎯 Key Highlights  
+- 🔄 Real-time ETL pipeline – automated extraction & transformation  
+- 📊 Interactive analytics dashboard built with Streamlit  
+- 🗄️ Local “data lake” storage simulation using CSV  
+- 🤖 Optional AI-powered insights (Gemini)  
+- 🎥 Movie-focused metrics: ratings, genre, box office, etc.  
 
 ---
 
 ## ✨ Features
 
 | Feature | Description |
-|----------|-------------|
-| 🎞️ **Real-Time Data Extraction** | Fetches movie data from OMDb API with validation and error handling |
-| 🔧 **ETL Pipeline** | Complete Extract → Transform → Load workflow |
-| 🗃️ **Data Lake Storage** | Saves cleaned data locally as CSV files |
-| 🎨 **Interactive UI** | Sleek Streamlit interface with movie posters and cards |
-| 📊 **Visual Analytics** | IMDb ratings and box office comparison charts |
-| 💾 **Downloadable Reports** | Export processed movie data as CSV |
-| 🤖 **AI Summaries** | (Optional) Gemini AI integration for dynamic insights |
-| 🔍 **Batch Processing** | Analyze multiple movies in a single run |
+|---------|-------------|
+| 🎞️ Real-Time Data Extraction | Fetches live movie info from OMDb API, with error handling |
+| 🔧 Full ETL Pipeline | Extract → Transform → Load implemented in Python & Pandas |
+| 🗃️ Data Lake Storage | Saves processed data locally in `/data_lake/cleaned_movie_data.csv` |
+| 🎨 Interactive UI | Streamlit frontend with movie posters, details and charts |
+| 📊 Visual Analytics | Bar charts comparing IMDb ratings & box-office collections |
+| 💾 Downloadable Data | Export cleaned movie dataset as CSV |
+| 🤖 AI Summaries | (Optional) Use Gemini API to generate intelligent movie summaries |
+| 🔍 Multi-movie Analysis | Compare multiple movies in one run |
 
 ---
 
 ## 🚀 Demo
 
-### 🖥️ Dashboard Overview
+### Dashboard Workflow  
 
-
-
-📽️ CineMetrics Dashboard
-├── Sidebar Input: Enter movie names
-├── Pipeline Execution: Click to run ETL
-├── Results Display:
-│ ├── Movie Posters Grid
-│ ├── IMDb Ratings Chart
-│ ├── Box Office Comparison
-│ └── Data Download Button
-└── Data Lake: cleaned_movie_data.csv
-
-
-### 🎬 Sample Output
-
-- **Visual Analytics:** Bar charts comparing IMDb ratings & box office collections  
-- **Movie Cards:** Posters, titles, year, rating, and director  
-- **Downloadable Data:** Clean CSV export ready for analysis  
+### Sample Output  
+- Movie cards: posters, title, year, genre, director, rating  
+- Bar charts: IMDb ratings vs box-office  
+- CSV download: cleaned movie dataset  
 
 ---
 
 ## 🧠 Tech Stack
 
 <div align="center">
-
-| Category | Technologies |
-|:----------:|:-------------|
-| **Language** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) |
-| **Framework** | ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white) |
-| **Data Processing** | ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white) |
-| **API Source** | OMDb API |
-| **Storage** | CSV (Local Data Lake Simulation) |
-| **AI (Optional)** | ![Google](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat&logo=google&logoColor=white) |
-| **Environment** | python-dotenv |
+  
+| Category        | Technologies                              |
+|-----------------|-------------------------------------------|
+| Language        | Python                                    |
+| Framework       | Streamlit                                 |
+| Data Processing | Pandas                                    |
+| API Source      | OMDb API                                  |
+| Storage         | CSV (Simulated Data Lake)                 |
+| AI Integration  | Gemini API (Optional)                     |
+| Env Management  | python-dotenv                             |
 
 </div>
 
 ---
 
 
----
 
 ## 📁 Project Structure
 
 CineMetrics/
-│
-├── 📄 movie_dashboard_app.py      # Main Streamlit application
-├── 📄 .env                        # API keys (not in repo)
-├── 📄 requirements.txt            # Python dependencies
-├── 📄 .gitignore                  # Git ignore rules
-├── 📄 README.md                   # Project documentation
-│
-├── 📁 data_lake/                  # Data storage directory
-│   └── cleaned_movie_data.csv     # Processed movie data
-│
-└── 📁 assets/                     # Optional screenshots
-    └── dashboard_preview.png
+├── movie_dashboard_app.py # Main Streamlit App
+├── .env # API keys (not committed)
+├── requirements.txt # Python dependencies
+├── .gitignore # Files/folders to ignore
+├── README.md # Project documentation
+├── data_lake/ # Local storage folder
+│ └── cleaned_movie_data.csv
+└── assets/ (optional) # Screenshots or preview images
+└── dashboard_preview.png
 
 
-
-
-
-
----
-
-## 🗝️ Environment Variables
-
-Create a file named `.env` in your project root and add:
-
-```env
-# OMDb API Key (Required)
+##🗝️ Environment Variables
+Create a .env file in the root directory:
+env# OMDb API Configuration
 OMDB_API_KEY=your_omdb_api_key_here
 
-# Gemini API Key (Optional)
+# Optional: Gemini AI Configuration
 GEMINI_API_KEY=your_gemini_api_key_here
-
 🔑 Getting API Keys
 
-OMDb API Key → https://www.omdbapi.com/apikey.aspx
+OMDb API Key (Required)
 
-Gemini API Key (Optional) → https://makersuite.google.com/app/apikey
+Visit: http://www.omdbapi.com/apikey.aspx
+Sign up for a free API key
+Paste it in your .env file
 
-⚡ Installation & Setup
-🧩 Prerequisites
+
+##Gemini API Key (Optional)
+
+Visit: https://makersuite.google.com/app/apikey
+Create an API key
+Add it to .env for AI features
+
+
+
+
+##⚡ Installation & Setup
+Prerequisites
 
 Python 3.8 or higher
+pip package manager
+Git (for cloning)
 
-pip (Python package manager)
-
-Git (for cloning the repo)
-
-Step 1️⃣: Clone the Repository
-git clone https://github.com/yourusername/CineMetrics.git
+Step 1: Clone the Repository
+bashgit clone https://github.com/yourusername/CineMetrics.git
 cd CineMetrics
-
-Step 2️⃣: Create a Virtual Environment
-
+Step 2: Create Virtual Environment
 Windows:
-
-python -m venv env
+bashpython -m venv env
 env\Scripts\activate
-
-
 Mac/Linux:
-
-python3 -m venv env
+bashpython3 -m venv env
 source env/bin/activate
+Step 3: Install Dependencies
+bashpip install -r requirements.txt
+Step 4: Configure Environment Variables
+Create a .env file and add your API keys (see Environment Variables)
+Step 5: Run the Application
+bashstreamlit run movie_dashboard_app.py
+The app will open automatically at: http://localhost:8501 🎉
 
-Step 3️⃣: Install Dependencies
-pip install -r requirements.txt
+##🎥 Usage
+Basic Workflow
 
-Step 4️⃣: Configure API Keys
+Launch the App
 
-Add your API keys in the .env file as shown in Environment Variables
-.
+bash   streamlit run movie_dashboard_app.py
 
-Step 5️⃣: Run the App
-streamlit run movie_dashboard_app.py
+## Enter Movie Names
 
-
-Then open: 👉 http://localhost:8501
-
-🎥 Usage
-
-Launch the app
-
-Enter movie names in the sidebar (comma-separated):
-
-Inception, Interstellar, Avatar, Joker, Oppenheimer
+Open the sidebar
+Input movie titles separated by commas
+Example: Inception, Interstellar, Avatar, The Dark Knight, Oppenheimer
 
 
-Click 🚀 Run CineMetrics Pipeline
+## Run the Pipeline
 
-View posters, ratings, and analytics
+Click "🚀 Run CineMetrics Pipeline"
+Wait for data extraction and processing
 
-Download the cleaned movie dataset (CSV)
 
-Access saved data in data_lake/cleaned_movie_data.csv
+## Explore Results
 
-📊 Data Pipeline Stages
-🟢 Extract
+View movie posters and details
+Analyze IMDb ratings chart
+Compare box office collections
+Download cleaned data as CSV
 
-Fetches data from OMDb API
 
-Handles invalid inputs & network issues
+Access Data Lake
 
-🟡 Transform
+Processed data saved in: data_lake/cleaned_movie_data.csv
+Use for further analysis or reporting
 
-Cleans and standardizes fields (rating, box office, runtime)
 
-Converts numeric types
 
-Removes duplicates & missing entries
+Example Input
+Inception, The Matrix, Avatar, Titanic
+Example Output
 
-🔵 Load
+Total Movies Processed: 4
+Data Fields: Title, Year, IMDb Rating, Box Office, Genre, Director, Actors
+Visualizations: Bar charts for ratings and revenue
+Download: Clean CSV file ready for analytics
 
-Stores processed dataset as a CSV in /data_lake/
 
-Enables analytics and download options
+📊 Data Pipeline Details
+Extract Phase
+
+Fetches data from OMDb API using HTTP requests
+Handles API errors and missing data gracefully
+Supports batch processing of multiple movies
+
+Transform Phase
+
+Cleans and validates movie data
+Converts data types (ratings to float, box office to numeric)
+Removes duplicates and handles null values
+Structures data in Pandas DataFrame
+
+Load Phase
+
+Saves processed data to local data lake
+Creates timestamped backups
+Ensures data persistence across sessions
+
 
 🚀 Future Enhancements
 
- Integrate Gemini AI for movie summaries
+ Cloud Integration: Migrate to Azure Data Lake or AWS S3
+ Workflow Orchestration: Add Apache Airflow scheduling
+ Advanced Analytics: Power BI or Plotly dashboards
+ ML Models: Movie recommendation engine
+ Database Support: PostgreSQL or MongoDB integration
+ Real-time Streaming: Kafka for live data ingestion
+ API Endpoint: RESTful API for data access
+ Docker Support: Containerization for easy deployment
 
- Add genre filters & search by year
 
- Deploy on Streamlit Cloud or Render
+🤝 Contributing
+Contributions are welcome! Please follow these steps:
 
- Build Power BI / Plotly Dashboards
+Fork the repository
+Create a feature branch (git checkout -b feature/AmazingFeature)
+Commit your changes (git commit -m 'Add some AmazingFeature')
+Push to the branch (git push origin feature/AmazingFeature)
+Open a Pull Request
 
- Automate ETL using Apache Airflow
-
- Store data on Azure Data Lake / AWS S3
 
 👩‍💻 Author
-
-Rashmika Rohit
-🎓 Artificial Intelligence & Machine Learning Engineer — L.D. College of Engineering
-💼 SSIP-Funded Innovator | Data & AI Enthusiast
-
-
-
-
+Rashmika
+🎓 Artificial Intelligence & Machine Learning Engineer
+🏛️ L.D. College of Engineering
 
 
 📜 License
-
-This project is licensed under the MIT License:
-
+This project is licensed under the MIT License - see the LICENSE file for details.
 MIT License
 
 Copyright (c) 2025 Rashmika
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction...
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
 🙏 Acknowledgements
 
-OMDb API
- — for movie data
+OMDb API - Movie database API
+Streamlit - Web app framework
+Pandas - Data manipulation library
+Google Gemini - AI integration
+Shields.io - README badges
 
-Streamlit
- — for dashboard UI
 
-Pandas
- — for data manipulation
+📞 Support
+If you encounter any issues or have questions:
 
-Google Gemini
- — for AI integration (optional)
+📧 Email: rashmikad1743@gmail.com
+🐛 Issues: GitHub Issues
+💬 Discussions: GitHub Discussions
 
-Shields.io
- — for badges
 
 <div align="center">
-
-⭐ Star this repo if you like it!
-Built with ❤️ by Rashmika Rohit | Data & AI Engineer
-
-</div> ```
-
-✅ Pro Tip for GitHub Upload:
-When you upload this README.md:
-
-GitHub will render all badges, tables, and emoji perfectly.
-
-Keep .env and /data_lake/ in .gitignore.
-
-Add a screenshot under /assets/ (e.g., dashboard_preview.png) for visual impact.
+⭐ Star this repository if you find it helpful!
+Made with ❤️ by Rashmika | Data & AI Enthusiast
+</div>
 
