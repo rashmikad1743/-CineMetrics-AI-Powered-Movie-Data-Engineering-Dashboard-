@@ -304,6 +304,7 @@ If you have questions, feedback, or ideas — reach out anytime:
 💬 GitHub Discussions
 
 ⭐ If you find this project helpful, please give it a Star!
-Made with ❤️ by Rashmika Rohit | Data & AI Enthusiast
+Made with ❤️ by Rashmika Makwana | Data & AI Enthusiast
+
 
 
