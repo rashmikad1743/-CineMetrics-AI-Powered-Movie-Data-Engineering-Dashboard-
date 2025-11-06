@@ -91,52 +91,28 @@ Built with **Python** and **Streamlit**, it fetches live data from the **OMDb AP
 
 ---
 
-## ⚙️ Architecture
-
-
-
-┌──────────────────────────────────────────────────────────────────┐
-│ Streamlit UI │
-│ (User Input + Visualization Layer) │
-└──────────────────────────┬───────────────────────────────────────┘
-│
-▼
-┌──────────────────────────────────────────────────────────────────┐
-│ ETL Pipeline Layer │
-├──────────────────────────────────────────────────────────────────┤
-│ EXTRACT TRANSFORM LOAD │
-│ ├─ Fetch API ├─ Clean & Validate ├─ Save to CSV │
-│ ├─ Parse JSON ├─ Convert Data Types ├─ Data Lake Storage │
-│ └─ Error Handling └─ Structure DataFrame └─ Local Backup │
-└──────────────────────────┬───────────────────────────────────────┘
-│
-▼
-┌──────────────────────────────────────────────────────────────────┐
-│ Data Sources │
-│ • OMDb API (Movie Metadata) │
-│ • Gemini AI (Optional Summaries) │
-└──────────────────────────────────────────────────────────────────┘
-
 
 ---
 
 ## 📁 Project Structure
 
-
-
 CineMetrics/
 │
-├── movie_dashboard_app.py # Main Streamlit App
-├── .env # API keys (private, not committed)
-├── requirements.txt # Project dependencies
-├── .gitignore # Files to ignore (e.g., .env, data_lake/)
-├── README.md # Documentation
+├── 📄 movie_dashboard_app.py      # Main Streamlit application
+├── 📄 .env                        # API keys (not in repo)
+├── 📄 requirements.txt            # Python dependencies
+├── 📄 .gitignore                  # Git ignore rules
+├── 📄 README.md                   # Project documentation
 │
-├── data_lake/ # Local Data Lake (CSV Storage)
-│ └── cleaned_movie_data.csv
+├── 📁 data_lake/                  # Data storage directory
+│   └── cleaned_movie_data.csv     # Processed movie data
 │
-└── assets/ # Optional screenshots
-└── dashboard_preview.png
+└── 📁 assets/                     # Optional screenshots
+    └── dashboard_preview.png
+
+
+
+
 
 
 ---
@@ -305,3 +281,4 @@ GitHub will render all badges, tables, and emoji perfectly.
 Keep .env and /data_lake/ in .gitignore.
 
 Add a screenshot under /assets/ (e.g., dashboard_preview.png) for visual impact.
+
