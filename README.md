@@ -84,7 +84,7 @@
 
 Before running the application, create a `.env` file in your project’s root directory and add the following:
 
-```env
+env
 # OMDb API Configuration (Required)
 OMDB_API_KEY=your_omdb_api_key_here
 
@@ -303,8 +303,7 @@ If you have questions, feedback, or ideas — reach out anytime:
 
 💬 GitHub Discussions
 
-<div align="center">
 ⭐ If you find this project helpful, please give it a Star!
 Made with ❤️ by Rashmika Rohit | Data & AI Enthusiast
 
-</div> ```
+
