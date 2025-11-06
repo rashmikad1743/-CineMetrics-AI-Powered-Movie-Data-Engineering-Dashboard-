@@ -76,15 +76,26 @@
 ## 📁 Project Structure
 
 CineMetrics/
-├── movie_dashboard_app.py # Main Streamlit App
-├── .env # API keys (not committed)
-├── requirements.txt # Python dependencies
-├── .gitignore # Files/folders to ignore
-├── README.md # Project documentation
-├── data_lake/ # Local storage folder
-│ └── cleaned_movie_data.csv
-└── assets/ (optional) # Screenshots or preview images
-└── dashboard_preview.png
+│
+├── 📄 movie_dashboard_app.py         # 🎯 Main Streamlit application (ETL + UI)
+│
+├── 📄 README.md                      # 📘 Project documentation
+├── 📄 requirements.txt               # 📦 Python dependencies
+├── 📄 .env                           # 🔑 Environment variables (API keys)
+├── 📄 .gitignore                     # 🚫 Ignore rules for Git (env, data, cache)
+│
+├── 📁 data_lake/                     # 💾 Simulated Data Lake (stores cleaned data)
+│   └── cleaned_movie_data.csv        # 📊 Output CSV generated after ETL
+│
+├── 📁 assets/                        # 🖼️ Optional folder for screenshots or previews
+│   └── dashboard_preview.png         # 🎨 App UI preview image
+│
+└── 📁 env/                           # ⚙️ Virtual environment (created locally)
+    ├── Scripts/                      # ▶️ Activation scripts (Windows)
+    ├── bin/                          # ▶️ Activation scripts (Mac/Linux)
+    ├── Lib/ or lib/                  # 📚 Installed Python packages
+    └── pyvenv.cfg                    # 🧩 Virtual environment config file
+
 
 
 ##🗝️ Environment Variables
@@ -268,4 +279,5 @@ If you encounter any issues or have questions:
 ⭐ Star this repository if you find it helpful!
 Made with ❤️ by Rashmika | Data & AI Enthusiast
 </div>
+
 
